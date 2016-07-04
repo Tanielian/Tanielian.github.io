@@ -1,0 +1,569 @@
+﻿/*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include.
+Should they include the border-box? Or just the content-box (which is the default value of the width and height properties)*/
+
+* {
+  box-sizing: border-box; 
+  
+}
+
+/* 
+With the @font-face rule, we no longer have to use one of the "web-safe" fonts.*/
+
+@font-face {
+	font-family: 'menu';
+	src: url('../fonts/good times rg.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'header';
+	src: url('../fonts/xirod.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* this specifies the home image properties*/
+#home_image{
+	width:100%;
+	opacity:0.9;
+}
+
+
+
+
+html,
+body {
+  font-family:'Impact, Charcoal, sans-serif';
+  color:white;
+  letter-spacing: 1px;
+  width: 100%;
+  height: 100%;
+  margin:auto;
+  background-image: url('../images/3.JPG');
+  background-size:100% 100%;
+  position:relative;
+  background-attachment:fixed;
+  text-align:center;
+  text-decoration:none;
+}
+
+
+
+header{
+	background-color:black;
+	opacity:.8;
+}
+
+header a{
+	text-decoration:none;
+	float:left;
+	padding:20px;
+	opacity:0.5;
+}
+
+
+h1{
+	font-family:header;
+	color:tomato;
+    margin: 1px auto;
+	padding:20px;
+text-align:center;	
+}
+
+
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+label {
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+}
+
+nav[role="navigation"] {
+  position: relative;
+  width: 100%;
+}
+nav[role="navigation"] a,
+nav[role="navigation"] label {
+  color: white;
+  text-decoration: none;
+  font-size: 15px; 
+  font-family:'menu';
+  transition: color .4s ease-in-out;
+}
+
+nav[role="navigation"] ul {
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  list-style: none;
+}
+
+	
+
+
+.section {
+	clear: both;
+	padding: 25px;
+	margin: 0px;
+	
+	
+}
+
+
+@font-face {
+    font-family: 'si';
+    src: url('../fonts/socicon.eot');
+    src: url('../fonts/socicon.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/socicon.woff') format('woff'),
+         url('../fonts/socicon.ttf') format('truetype'),
+         url('../fonts/socicon.svg#icomoonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+ 
+}
+ 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family:si;
+        src: url(../fonts/socicon.svg) format(svg);
+    }
+}
+
+.soc {
+    overflow:hidden; 
+	padding:0;
+    list-style:none;
+	
+}
+
+.soc li {
+    display:inline-block;
+    zoom:1;
+}
+
+.soc li a {
+    font-family:si!important;
+    font-style:normal;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing:border-box;
+
+    -o-transition:.1s;
+    -ms-transition:.1s;
+    -moz-transition:.1s;
+    -webkit-transition:.1s;
+    transition:.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+
+    overflow:hidden;
+    text-decoration:none;
+    text-align:center;
+    display:block;
+    position: relative;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 55px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    border-radius: 17px;
+    margin-right: 50px;
+    color: #ffffff;
+    background-color: none;
+	
+}
+
+.soc a:hover {
+    z-index: 2;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.soc-icon-last{
+    margin:0 !important;
+}
+
+.soc-twitter {
+    background-color: #4da7de;
+}
+.soc-twitter:before {
+    content:'a';
+}
+.soc-facebook {
+    background-color: #3e5b98;
+}
+.soc-facebook:before {
+    content:'b';
+}
+.soc-linkedin {
+    background-color: #3371b7;
+}
+.soc-linkedin:before {
+    content:'j';
+}
+
+
+
+
+/*  GROUPING  ============================================================================= */
+
+
+.group:before,
+.group:after {
+    content:"";
+    display:table;
+}
+.group:after {
+    clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+/*  GRID COLUMN SETUP   ==================================================================== */
+
+.col {
+	float:left;
+	margin: 1% 0 1% 1.6%;
+	padding:1em 0; 
+	border-radius: 10px;
+	text-align:justify;
+	background-color:black;
+	opacity:0.9;
+	font-size:20px;
+	margin-left:10px;
+}
+
+  
+.col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
+
+
+/*  REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
+
+@media only screen and (max-width: 680px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+
+
+.span_1_of_2 {
+	width: 49.2%;
+	padding:20px
+	}
+.home_content{
+	padding-bottom:20px;
+	font-size:18px;
+}
+
+
+
+
+.about{
+	
+	width:100%;
+}
+	
+
+
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 680px) {
+	
+	.span_1_of_2 {
+		width: 100%; 
+	}
+	.col{
+		font-size:10px;
+	}
+}
+/*We can select elements that are direct children of other elements
+A child element is any element that is nested directly in another element. Elements that are nested deeper than that are called descendant elements.
+ul > li will select all li that are a direct children ul*/
+
+nav[role="navigation"] ul > li a{
+  float: left;
+  padding: .55em .55em;
+  width: 20%;
+  background-color:black;
+  opacity:0.8;
+  text-align: center;
+  transition-duration: .7s;
+  transition-timing-function: linear;
+  transition-property: box-shadow, color;
+  box-shadow: 0 0.05em 0.25em 0 rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+nav[role="navigation"] ul > li a:hover {
+  background-color: white;
+  color: #fff;
+  box-shadow: 0 0.05em 0.25em 0 rgba(0, 0, 0, 0.35), inset 0 0 0 2em rgba(0, 0, 0, 0.3);
+}
+nav[role="navigation"] ul > li:hover > a {
+  color: black;
+}
+
+
+
+ul li a.selected
+{
+	color:red;
+}
+
+
+/* Code for mobile devices */
+
+
+.footer-distributed{
+	background-color: white;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px black ;
+	opacity:0.7;
+	padding: 45px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left p{
+	color:  black;
+	font-size: 24px;
+	margin: 0;
+}
+
+/* Footer links */
+
+.footer-distributed p.footer-links{
+	font-size:20px;
+	font-weight: bold;
+	color:  black;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer-distributed p.footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color: black;
+}
+
+.footer-distributed .footer-right{
+	float: right;
+	margin-top: 6px;
+	max-width: 180px;
+}
+
+.footer-distributed .footer-right a{
+	display: inline-block;
+	width:35px;
+	line-height: 35px;
+	margin-left: 3px;
+}
+
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 300px;
+  margin: auto;
+  max-width: 400px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+th {
+  color:#D5DDE5;;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+  border-bottom: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+  text-decoration:none;
+}
+td a {
+	color:tomato;
+}
+
+td a:hover{
+	color:white;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+
+
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 680px) {
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		text-align: center;
+	}
+
+	.footer-distributed .footer-right{
+		float: none;
+		margin: 0 auto 20px;
+	}
+
+	.footer-distributed .footer-left p.footer-links{
+		line-height: 1.8;
+	}
+}
+
+
+/* The @media rule is used to define different style rules for different media types/devices. */
+
+@media screen and (max-width: 680px) {
+  html,
+  body {
+    margin: 0;
+  }
+  
+
+
+  nav[role="navigation"] ul {
+    display: none;
+    height: 100%;
+  }
+  nav[role="navigation"] label {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 2.25em;
+    padding: .45em;
+    font-size: 1.1em;
+    margin: 0;
+    border: 0.15em solid rgba(60, 60, 60, 0.2);
+    background-color:black; 
+	opacity:0.8;
+  }
+  nav[role="navigation"] label:after {
+    position: absolute;
+    right: .25em;
+    top: 0;
+    content: "\2261";
+    font-size: 1.8em;
+  }
+  
+  /* We can select all siblings of an element that follow it. This is like the Adjacent Selector (A + B) except it gets all of the following elements instead of one.
+
+
+input ~ ul will select all ul that follow a input */
+  nav[role="navigation"] input[type=checkbox]:checked ~ label:after {
+    color: #222;
+  }
+  nav[role="navigation"] input[type=checkbox]:checked ~ ul  {
+    display: block;
+  }
+  nav[role="navigation"] input[type=checkbox]:checked ~ ul > li a
+ {
+    width: 100%;
+    opacity: .8;
+    text-align: center;
+  }
+  /* The ::after selector inserts something after the content of each selected element(s).*/
+  nav[role="navigation"] input[type=checkbox]:checked ~ ul > li:after {
+    position: absolute;
+    right: .25em;
+    font: bold 1.4em sans-serif;
+  }
+
+}
